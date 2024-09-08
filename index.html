@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokePage</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+</head>
+<body class="bg-red-500 p-5">
+    <main class="">
+        <form id="form" action="" class="border-4 border-yellow-500 p-2 flex justify-center">
+            <input id="input-pokemon" type="text" placeholder="Ingresar dato" class="rounded p-2" required>
+            <button class="rounded bg-yellow-500 p-2">Buscar</button>
+        </form>
+    </main>
+    <section class="pt-2 flex justify-center">
+        <div class="bg-white rounded text-center">
+            <img id="pokemon-img" src="/img/103599917_3162450903813439_9196090569806010528_n.jpg" alt="" width="600px" class="">
+            <h1 id="pokemon-name" class="font-semibold text-lg">¿Quién es ese Pokemón?</h1>
+        </div>
+    </section>
+    <section>
+        <div id="listPower" class="pt-2 bg-white rounded p-4 text-center">
+            <ul>
+                <li>
+                    ¿Quieres saber los poderes de tu pokemón favorito? 
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script src="/index.js"></script>
+</body>
+</html>
