@@ -3,6 +3,8 @@ const form = document.querySelector("#form");
 const namePokemon = document.querySelector("#pokemon-name");
 const imgPokemon = document.querySelector("#pokemon-img");
 const listPower = document.querySelector("#listPower");
+const stats = document.querySelector("#stats");
+
 
 form.onsubmit = async function(event) {
     event.preventDefault();
@@ -26,15 +28,55 @@ form.onsubmit = async function(event) {
 
         //template string
         listPower.innerHTML += `<li> ${abilities} </li>`;
+
     }
+
+    console.log(data.stats);
+    console.log(data.stats[0]);
+    console.log(data.stats[0].stat.name);
+    console.log(data.stats[0].base_stat);
+
+    const stast_name = []
+    const stast_base_stat = []
+
+    for(staticos in data.stats){
+        const estadisticas = data.stats[staticos].stat.name;
+        const numeros_estadisticos = data.stats[staticos].base_stat;
+        console.log(estadisticas);
+        console.log(numeros_estadisticos);
+        stast_name.push(estadisticas);
+        stast_base_stat.push(numeros_estadisticos);
+    }
+    
+    
+
+    console.log(" lista de nombres: "+stast_name);
+    console.log(" lista de numeros: "+stast_base_stat);
+
+    const mychart = new Chart(stats,{
+        type:"bar",
+        data:{
+            labels:stast_name,
+            datasets:[
+                {
+                    label : "Pokemon data",
+                    data  : stast_base_stat,
+                },
+            ]
+        }
+    }
+    )
 }
 
 function renderItemList(name){
     return `
-    <div class="bg-white rounded text-center">
-            <img id="pokemon-img" src="/img/004.png" alt="" class="">
+    <div class="bg-white rounded text-center ">
+            <img id="pokemon-img" src="/img/004.png" alt="" class="max-h-24 rounded-lg">
             <h1 id="pokemon-name" class="font-semibold text-lg">${name}</h1>
         </div>
 
     `;
 }
+
+
+

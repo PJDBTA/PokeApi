@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokePage</title>
     <script src="https://cdn.tailwindcss.com/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-red-500 p-5">
-    <main class="">
-        <form id="form" action="" class="border-4 border-yellow-500 p-2 flex justify-center">
+    <main class="max-w-md mx-auto p-4 md:p-6 lg:p-8">
+        <form id="form" action="" class="flex flex-wrap justify-center mb-4 md:mb-6 lg:mb-8">
             <input id="input-pokemon" type="text" placeholder="Ingresar dato" class="rounded p-2" required>
             <button class="rounded bg-yellow-500 p-2">Buscar</button>
         </form>
     </main>
-    <section class="pt-2 flex justify-center">
-        <div class="bg-white rounded text-center">
-            <img id="pokemon-img" src="/img/103599917_3162450903813439_9196090569806010528_n.jpg" alt="" width="600px" class="">
+    <section class="pt-2 flex justify-center ">
+        <div class="bg-white rounded text-center max-w-sm md:max-w-md lg:max-w-lg">
+            <img id="pokemon-img" src="/img/103599917_3162450903813439_9196090569806010528_n.jpg" alt="" width="" class="" style="max-height: 250px;">
             <h1 id="pokemon-name" class="font-semibold text-lg">¿Quién es ese Pokemón?</h1>
         </div>
     </section>
     <section>
-        <div id="listPower" class="pt-2 bg-white rounded p-4 text-center">
+        <div id="listPower" class="pt-2 bg-white rounded p-4 mx-auto text-center max-w-sm md:max-w-md lg:max-w-lg md:flex-grow">
             <ul>
                 <li>
                     ¿Quieres saber los poderes de tu pokemón favorito? 
@@ -28,6 +29,16 @@
             </ul>
         </div>
     </section>
+    <section style="margin: 0 auto;margin-top: 20px;" class="rounded-lg bg-white w-full md:w-3/4 lg:w-2/3 flex justify-center" >
+        <div>
+            <h1> </h1>
+            <canvas id="stats" class="w-full md:w-3/4 lg:w-2/3 ">
+
+            </canvas>
+        </div>
+    </section>
+
     <script src="/index.js"></script>
+    
 </body>
 </html>
